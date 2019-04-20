@@ -1,3 +1,101 @@
+body{
+    margin:0;
+    font-family: 'Indie Flower', cursive;
+    background: #faedbe;
+}
+/*Top-bar*/
+.navbar{
+    background:black;
+    width:100%;
+    height:10%;
+    z-index: 0;
+    position: relative;
+    
+}
+.navbar-light .navbar-brand{
+    color:white;
+    font-size:28px;
+}
+.navbar-light .navbar-brand:hover{
+    color:#F4D35E;
+}
+.nav-body{
+    width:100%;
+}
+#btn-create{
+    color:white;
+   display: inherit;
+    border: solid 1px white !important;
+    float:right;
+    margin-top:10px;
+    
+}
+ #btn-create:hover{
+   font-style: bold;
+   color:black;
+    background:#F4D35E !important;
+}
+/*Card*/
 .card{
     margin: 20px 10px ;
+    background: #F4D35E;
+    -webkit-box-shadow: -4px 1px 24px -1px rgba(66,61,66,0.66);
+    -moz-box-shadow: -4px 1px 24px -1px rgba(66,61,66,0.66);
+    box-shadow: -4px 1px 24px -1px rgba(66,61,66,0.66);
+}
+hr {
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    border: 0;
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+  }
+/*Buttons*/
+.btn{
+    background:white;
+    border-radius: 5px;
+    color:black;
+    display: none;
+    background: transparent;
+    border:none !important;
+    position:relative;
+    
+}
+.btn:hover{
+    background:black;
+}
+#btn-edit{
+    float:left;
+}
+#btn-delete{
+    float:right;
+}
+.buttons{
+    height:20px;
+}
+
+.buttons{
+    border-bottom: solid 1px #202020;   
+    height:40px;
+  margin-left:20px;
+  margin-right:20px;
+ display:none;
+}
+.wrapper:hover .btn {
+   
+    display: inline-block;  
+     
+}
+.wrapper:hover .buttons{
+    display:inline; 
+}
+/*Progress Bar*/
+.progress-bar{
+    background:black;
+}
+
+.gj-picker-md [role=header] {
+background:#F4D35E !important;
+}
+.gj-picker-md [role=switch]{
+    background:#F4D35E !important;
 }
