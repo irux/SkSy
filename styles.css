@@ -22,6 +22,8 @@ body{
 .nav-body{
     width:100%;
 }
+
+/**TopBar Create Button*/
 #btn-create{
     color:white;
    display: inherit;
@@ -35,6 +37,7 @@ body{
    color:black;
     background:#F4D35E !important;
 }
+
 /*Card*/
 .card{
     margin: 20px 10px ;
@@ -49,6 +52,7 @@ hr {
     border: 0;
     border-top: 1px solid rgba(0, 0, 0, 0.1);
   }
+
 /*Buttons*/
 .btn{
     background:white;
@@ -63,16 +67,43 @@ hr {
 .btn:hover{
     background:black;
 }
+
+.btn:active{
+    border: solid 1px black !important;
+    box-shadow: none !important;
+    background: #f7e08e;
+    }
+
 #btn-edit{
     float:left;
 }
+#btn-edit:active{
+    border:solid 1px black !important;
+    background: #f7e08e;
+
+}
+
 #btn-delete{
     float:right;
+}
+#btn-delete:active{
+    border:solid 1px black !important;
+    background: #f7e08e;
+
 }
 .buttons{
     height:20px;
 }
-
+#btn-todo{
+    border:solid 1px black !important;
+    border-radius: 5px;
+    color:black;
+    display: inherit;
+}
+#btn-todo:hover{
+    background:#F4D35E;
+    
+}
 .buttons{
     border-bottom: solid 1px #202020;   
     height:40px;
@@ -88,14 +119,48 @@ hr {
 .wrapper:hover .buttons{
     display:inline; 
 }
+
 /*Progress Bar*/
 .progress-bar{
     background:black;
 }
 
+/*Calender Custom CSS*/
 .gj-picker-md [role=header] {
-background:#F4D35E !important;
+    background:#131416;
+    color:#F4D35E !important;
+border-top-left-radius:10px;
+border-top-right-radius:10px;
 }
 .gj-picker-md [role=switch]{
-    background:#F4D35E !important;
+    background:#131416;
+}
+.gj-picker-md{
+    border-radius:10px;
+    background:#131416;
+    color:white;
+}
+.gj-picker [role=switch] [role=calendarMode]{
+    color:#F4D35E;
+
+}
+.gj-picker [role=switch] [role=clockMode] {
+    color:#F4D35E;
+
+}
+.gj-picker-md .arrow-end {
+   border:16px solid #F4D35E;
+}
+.gj-picker-md .arrow-begin, .gj-picker-md [role=body] [role=arrow] {
+    background:#F4D35E; 
+}
+.gj-picker-md [role=footer] button.gj-button-md{
+    color:#F4D35E;
+}
+.gj-picker-md table tr td.today div {
+    color:#F4D35E;
+}
+.gj-datepicker [role=right-icon]:hover{
+ color:grey;
+ 
 }
