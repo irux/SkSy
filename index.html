@@ -33,12 +33,12 @@
 
   <!--Modal-->
 
-  <div class="modal fade" id="create" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+  <div class="modal fade" id="create" tabindex="-1" role="dialog" aria-labelledby="createLabel"
     aria-hidden="true">
     <div class="modal-dialog" role="document">
       <div class="modal-content">
         <div class="modal-header">
-          <h5 class="modal-title" id="exampleModalLabel">Create your note...</h5>
+          <h5 class="modal-title" id="createLabel">Create your note...</h5>
           <button type="button" class="close" data-dismiss="modal" aria-label="Close">
             <span aria-hidden="true">&times;</span>
           </button>
@@ -47,15 +47,49 @@
           <form>
             <div class="form-group">
               <label for="recipient-name" class="col-form-label">TO DO:</label>
-              <input type="text" class="form-control" id="title_todo">
+              <input type="text" class="form-control" id="title_todo" required>
             </div>
             <div class="form-group">
               <label for="message-text" class="col-form-label">Description:</label>
-              <textarea class="form-control" id="description_todo"></textarea>
+              <textarea class="form-control" id="description_todo" required></textarea>
             </div>
             <div class="form-group">
               <label for="recipient-name" class="col-form-label">Deadline:</label>
-              <input id="inputdate" width="312" id="deadline_todo">
+              <input id="inputdate" width="312" id="deadline_todo" required>
+            </div>
+          </form>
+        </div>
+        <div class="modal-footer">
+          <button type="submit" class="btn btn-primary" onclick="create_new_todo()" id="btn-todo">Create</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <div class="modal fade" id="editTodo" tabindex="-1" role="dialog" aria-labelledby="editTodoLabel"
+    aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="editTodoLabel">Edit your note!</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <form>
+            <div class="form-group">
+              <label for="recipient-name" class="col-form-label">TO DO:</label>
+              <input type="text" class="form-control" id="edit_title_todo">
+            </div>
+            <div class="form-group">
+              <label for="message-text" class="col-form-label">Description:</label>
+              <textarea class="form-control" id="edit_description_todo"></textarea>
+            </div>
+            <div class="form-group">
+              <label for="recipient-name" class="col-form-label">Deadline:</label>
+              <input id="inputdate" width="312" id="edit_deadline_todo">
             </div>
           </form>
         </div>
