@@ -1,3 +1,4 @@
+/*Create button */
 $('#create').on('show.bs.modal', function (event) {
   var button = $(event.relatedTarget) // Button that triggered the modal
   var recipient = button.data('whatever') // Extract info from data-* attributes
@@ -11,6 +12,8 @@ $('#create').on('show.bs.modal', function (event) {
 $('#create').on('hide.bs.modal', function (event) {
   $(this).find('form').trigger('reset');
 })
+
+
 let date_picker = $('#inputdate').datetimepicker({ footer: true, modal: true });
 
 let COUNTER_TODOS = 0
@@ -36,9 +39,13 @@ class ToDo {
               <a href="#" class="btn btn-primary" onclick="deleteTodo(${this.id})" id="btn-delete"><i class="fas fa-trash-alt"></i></i></a>
           </div>
           <div class="card-body">
-            <h5 class="card-title">${this.title}</h5>
-            <p class="card-text">${this.description}</p>
-           <hr> </hr>
+        <h5 class="card-title">${this.title}</h5>
+        <p class="card-text">${this.description}</p>
+      <div class="deadline">
+         <i class="far fa-calendar-check"></i>
+         <p class="date">${this.deadline}</p>
+      </div>
+       <hr> </hr>
            <div class="progress">
               <div class="progress-bar" role="progressbar" style="width: 0%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">0%</div>
             </div>
@@ -46,7 +53,11 @@ class ToDo {
           </div>
         </div>
         </div>
+       
       </div>
+    </div>
+    </div>
+  </div>
     `;
   }
 
