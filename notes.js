@@ -1,3 +1,4 @@
+/*Create button */
 $('#create').on('show.bs.modal', function (event) {
   var button = $(event.relatedTarget) // Button that triggered the modal
   var recipient = button.data('whatever') // Extract info from data-* attributes
@@ -7,14 +8,15 @@ $('#create').on('show.bs.modal', function (event) {
   modal.find('.modal-title').text('New message to ' + recipient)
   modal.find('.modal-body input').val(recipient)
 })
+
+/*calendar input */
 let date_picker = $('#inputdate').datetimepicker({footer:true, modal:true});
+/* */
+
 
 let COUNTER_TODOS = 0
-
 class ToDo{
   
-
-
   constructor(id,title,description,deadline){
     this.titleTodo = title;
     this.idTodo = id;
@@ -27,24 +29,28 @@ class ToDo{
 
     return `
     <div class="col-lg-4 col-md-6" >
-        <div class="wrapper">
-        <div class="card" >
-          <div class="buttons" id="overlay">
-              <a href="#" class="btn btn-primary" id="btn-edit"><i class="fas fa-edit"></i></a>
-              <a href="#" class="btn btn-primary" id="btn-delete"><i class="fas fa-trash-alt"></i></i></a>
-          </div>
-          <div class="card-body">
-            <h5 class="card-title">${this.title}</h5>
-            <p class="card-text">${this.description}</p>
-           <hr> </hr>
-           <div class="progress">
-              <div class="progress-bar" role="progressbar" style="width: 0%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">45%</div>
-            </div>
-           
-          </div>
-        </div>
-        </div>
+    <div class="wrapper">
+    <div class="card" >
+      <div class="buttons" id="overlay">
+          <a href="#" class="btn btn-primary" id="btn-edit"><i class="fas fa-edit"></i></a>
+          <a href="#" class="btn btn-primary" id="btn-delete"><i class="fas fa-trash-alt"></i></i></a>
       </div>
+      <div class="card-body">
+        <h5 class="card-title">${this.title}</h5>
+        <p class="card-text">${this.description}</p>
+      <div class="deadline">
+         <i class="far fa-calendar-check"></i>
+         <p class="date">${this.deadline}</p>
+      </div>
+       <hr> </hr>
+       <div class="progress">
+          <div class="progress-bar" role="progressbar" style="width: 0%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">45%</div>
+        </div>
+       
+      </div>
+    </div>
+    </div>
+  </div>
     `;
   }
 
@@ -64,10 +70,6 @@ class ToDo{
     return this.idTodo;
   }
 
-
-
-
-  
 	
 }
 
