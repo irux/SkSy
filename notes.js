@@ -160,7 +160,7 @@ function editActualTodo(){
   console.log("Here 1")
 
   //We check if the fields are pre fill 
-  if(!title.checkValidity() || !description.checkValidity() || (date_picker_edit.value() == "" || date_picker_edit.value() == undefined))
+  if(!title.checkValidity() || !description.checkValidity() || (date_picker_edit.value() == "" || date_picker_edit.value() == undefined) || !progress.checkValidity())
       return;
 
 
