@@ -1,0 +1,177 @@
+body{
+    margin:0;
+    font-family: 'Indie Flower', cursive;
+    background: #faedbe;
+}
+/*Top-bar*/
+.navbar{
+    background:black;
+    width:100%;
+    height:10%;
+    z-index: 0;
+    position: relative;
+    
+}
+.navbar-light .navbar-brand{
+    color:white;
+    font-size:28px;
+}
+.navbar-light .navbar-brand:hover{
+    color:#F4D35E;
+}
+.nav-body{
+    width:100%;
+}
+
+/**TopBar Create Button*/
+#btn-create{
+    color:white;
+   display: inherit;
+    border: solid 1px white !important;
+    float:right;
+    margin-top:10px;
+    
+}
+ #btn-create:hover{
+   font-style: bold;
+   color:black;
+    background:#F4D35E !important;
+}
+
+/*Card*/
+.card{
+    margin: 20px 10px ;
+    background: #F4D35E;
+    -webkit-box-shadow: -4px 1px 24px -1px rgba(66,61,66,0.66);
+    -moz-box-shadow: -4px 1px 24px -1px rgba(66,61,66,0.66);
+    box-shadow: -4px 1px 24px -1px rgba(66,61,66,0.66);
+}
+hr {
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    border: 0;
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+  }
+
+/*Buttons*/
+.btn{
+    background:white;
+    border-radius: 5px;
+    color:black;
+    display: none;
+    background: transparent;
+    border:none !important;
+    position:relative;
+    
+}
+.btn:hover{
+    background:black;
+}
+
+.btn:active{
+    border: solid 1px black !important;
+    box-shadow: none !important;
+    background: #f7e08e;
+    }
+
+#btn-edit{
+    float:left;
+}
+#btn-edit:active{
+    border:solid 1px black !important;
+    background: #f7e08e;
+
+}
+
+#btn-delete{
+    float:right;
+}
+#btn-delete:active{
+    border:solid 1px black !important;
+    background: #f7e08e;
+
+}
+.buttons{
+    height:20px;
+}
+#btn-todo{
+    border:solid 1px black !important;
+    border-radius: 5px;
+    color:black;
+    display: inherit;
+}
+#btn-todo:hover{
+    background:#F4D35E;
+    
+}
+.buttons{
+    border-bottom: solid 1px #202020;   
+    height:40px;
+  margin-left:20px;
+  margin-right:20px;
+ display:none;
+}
+.wrapper:hover .btn {
+   
+    display: inline-block;  
+     
+}
+.wrapper:hover .buttons{
+    display:inline; 
+}
+
+/*Progress Bar*/
+.progress-bar{
+    background:black;
+}
+
+/*Calender Custom CSS*/
+.gj-picker-md [role=header] {
+    background:#131416;
+    color:#F4D35E !important;
+border-top-left-radius:10px;
+border-top-right-radius:10px;
+}
+.gj-picker-md [role=switch]{
+    background:#131416;
+}
+.gj-picker-md{
+    border-radius:10px;
+    background:#131416;
+    color:white;
+}
+.gj-picker [role=switch] [role=calendarMode]{
+    color:#F4D35E;
+
+}
+.gj-picker [role=switch] [role=clockMode] {
+    color:#F4D35E;
+
+}
+.gj-picker-md .arrow-end {
+   border:16px solid #F4D35E;
+}
+.gj-picker-md .arrow-begin, .gj-picker-md [role=body] [role=arrow] {
+    background:#F4D35E; 
+}
+.gj-picker-md [role=footer] button.gj-button-md{
+    color:#F4D35E;
+}
+.gj-picker-md table tr td.today div {
+    color:#F4D35E;
+}
+.gj-datepicker [role=right-icon]:hover{
+ color:grey;
+ 
+}
+/*Deadline*/
+.deadline{
+    margin-left:52%;
+}
+.deadline p,
+.deadline i{
+    display: inline;
+}
+
+
+
