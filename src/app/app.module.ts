@@ -17,6 +17,8 @@ import { HeaderComponent } from './header/header.component';
 import { HomeComponent } from './home/home.component';
 import { TodoComponent } from './todo/todo.component';
 
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -33,6 +35,7 @@ import { TodoComponent } from './todo/todo.component';
     AuthModule,
     AdminModule,
     AppRoutingModule,
+    FontAwesomeModule
   ],
   providers: [{
     provide: HTTP_INTERCEPTORS,

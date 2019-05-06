@@ -1,17 +1,17 @@
 
 
-<div  id="" >
+<div>
   <div class="wrapper">
   <div class="card" >
     <div class="buttons" id="overlay">
-        <a href="#" class="btn btn-primary"  data-toggle="modal" data-target="#editTodo" id="btn-edit"><i class="fas fa-edit"></i></a>
-        <a href="#" class="btn btn-primary"  id="btn-delete"><i class="fas fa-trash-alt"></i></a>
+        <a href="#" class="btn btn-primary"  data-toggle="modal" data-target="#editTodo" id="btn-edit"><fa-icon [icon]="faEdit"></fa-icon></a>
+        <a href="#" class="btn btn-primary"  id="btn-delete"><fa-icon [icon]="faTrashAlt"></fa-icon></a>
     </div>
     <div class="card-body">
   <h5 class="card-title">Test Title</h5>
   <p class="card-text">Test Description</p>
 <div class="deadline">
-   <i class="far fa-calendar-check"></i>
+  <fa-icon [icon]="faCalendarCheck"></fa-icon>
    <p class="date">Test Date</p>
 </div>
      <div class="progress">
