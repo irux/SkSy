@@ -12,8 +12,9 @@ $custom-typography: mat-typography-config(
 @include mat-core($custom-typography);
 
 body {
-  background-color: #f4f3f3;
-  margin: 0;
+    margin:0;
+    font-family: 'Indie Flower', cursive;
+    background: #faedbe;
   app-root * {
     font-family: 'Exo', sans-serif;
   }
