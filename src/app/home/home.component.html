@@ -22,20 +22,20 @@
       <form>
         <div class="form-group">
           <label for="recipient-name" class="col-form-label">TO DO:</label>
-          <input type="text" class="form-control" id="title_todo" required>
+          <input type="text" [(ngModel)]="newTodo.title" class="form-control" name="title" id="title_todo" required>
         </div>
         <div class="form-group">
           <label for="message-text" class="col-form-label">Description:</label>
-          <textarea class="form-control" id="description_todo" required></textarea>
+          <textarea class="form-control" [(ngModel)]="newTodo.description" name="description" id="description_todo" required></textarea>
         </div>
         <div class="form-group">
           <label for="recipient-name" class="col-form-label">Deadline:</label>
-          <input id="inputdate" width="312" id="deadline_todo" required>
+          <ngb-datepicker [(ngModel)]="date" #d name="date"></ngb-datepicker>
         </div>
       </form>
     </div>
     <div class="modal-footer">
-        <button type="submit" class="btn btn-primary" onclick="create_new_todo()" id="btn-todo">Create</button>
+        <button type="submit" class="btn btn-primary" (click)="createTodo(newTodo)" id="btn-todo">Create</button>
       <button type="button" class="btn btn-light" (click)="modal.close('Close click')">Close</button>
     </div>
   </ng-template>

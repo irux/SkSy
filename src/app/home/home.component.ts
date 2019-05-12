@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {NgbModal, ModalDismissReasons} from '@ng-bootstrap/ng-bootstrap';
+import {TodoService} from '../services/todo-services/todo.service';
+import {Todo} from '../types/Todo';
 
 @Component({
   selector: 'app-home',
@@ -9,7 +11,11 @@ import {NgbModal, ModalDismissReasons} from '@ng-bootstrap/ng-bootstrap';
 export class HomeComponent implements OnInit {
   closeResult: string;
 
-  constructor(private modalService: NgbModal) {}
+  public date;
+
+  public newTodo : Todo = new Todo()
+
+  constructor(private modalService: NgbModal,private todoService : TodoService) {}
 
   openBackDropCustomClass(content) {
     this.modalService.open(content, {backdropClass: 'light-blue-backdrop'});
@@ -32,6 +38,16 @@ export class HomeComponent implements OnInit {
   }
 
 
+  public async createTodo(todo){
+    console.log("Here is the todo : ")
+    console.log(todo)
+    console.log("Creating todo...")
+    let request = await this.todoService.createTodo(todo);
+    request.subscribe((response) => console.log(response))
+    console.log("Todo Created")
+    this.newTodo = new Todo()
+    this.modalService.dismissAll()
+  }
 
 
   ngOnInit() {
