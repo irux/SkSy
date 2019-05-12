@@ -3,17 +3,20 @@
 @import '~angular-tree-component/dist/angular-tree-component.css';
 @import '~@angular/material/theming';
 @import '~dragula/dist/dragula.css';
+@import "~bootstrap/dist/css/bootstrap.min.css";
+
 
 $custom-typography: mat-typography-config(
-    $font-family: 'Exo'
+    $font-family: 'Indie Flower'
 );
 
 @include mat-core($custom-typography);
 
 body {
-  background-color: #f4f3f3;
-  margin: 0;
+    margin:0;
+    font-family: 'Indie Flower', cursive;
+    background: #faedbe;
   app-root * {
-    font-family: 'Exo', sans-serif;
+    font-family: 'Indie Flower';
   }
 }
