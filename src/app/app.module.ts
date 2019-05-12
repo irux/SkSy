@@ -16,7 +16,7 @@ import { AppRoutingModule } from './app-routing/app-routing.module';
 import { HeaderComponent } from './header/header.component';
 import { HomeComponent } from './home/home.component';
 import { TodoComponent } from './todo/todo.component';
-
+import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
 @NgModule({
@@ -35,7 +35,8 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
     AuthModule,
     AdminModule,
     AppRoutingModule,
-    FontAwesomeModule
+    FontAwesomeModule,
+    NgbModule
   ],
   providers: [{
     provide: HTTP_INTERCEPTORS,

@@ -3,7 +3,7 @@
   <div class="wrapper">
   <div class="card" >
     <div class="buttons" id="overlay">
-        <a href="#" class="btn btn-primary"  data-toggle="modal" data-target="#editTodo" id="btn-edit"><fa-icon [icon]="faEdit"></fa-icon></a>
+        <a href="#" class="btn btn-outline-primary mb-2 mr-2"   id="btn-edit" (click)="openEditWindow(editContent)"><fa-icon [icon]="faEdit"></fa-icon></a>
         <a href="#" class="btn btn-primary"  id="btn-delete"><fa-icon [icon]="faTrashAlt"></fa-icon></a>
     </div>
     <div class="card-body">
@@ -16,8 +16,41 @@
      <div class="progress">
         <div class="progress-bar" role="progressbar" style="width: 50%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">50%</div>
       </div>
-     
     </div>
   </div>
   </div>
+
+  <ng-template #editContent let-modal>
+      <div class="modal-header">
+        <h5 class="modal-title" id="editTodoLabel">Edit your note!</h5>
+        <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <form>
+            <div class="form-group">
+                <label for="recipient-name" class="col-form-label">TO DO:</label>
+                <input type="text" class="form-control" id="edit_title_todo" >
+              </div>
+            <div class="form-group">
+                <label for="message-text" class="col-form-label">Description:</label>
+                <textarea class="form-control" id="edit_description_todo"></textarea>
+              </div>
+              <div class="form-group">
+                <label for="recipient-name" class="col-form-label">Deadline:</label>
+                <input width="312" id="edit_deadline_todo" required>
+              </div>
+              <div class="form-group">
+                <label for="recipient-name" class="col-form-label">Progress bar</label>
+                <input type="number" class="form-control" id="edit_progress_todo" min="0" max="100" required> 
+              </div>
+            </form>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-primary" onclick="editActualTodo()" id="btn-todo">Edit</button>
+        <button type="button" class="btn btn-light" (click)="modal.close('Close click')">Close</button>
+      </div>
+    </ng-template>
+
  
