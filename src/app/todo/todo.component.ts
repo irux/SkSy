@@ -15,6 +15,9 @@ export class TodoComponent implements OnInit {
   faEdit = faEdit
 
   @Input()
+  public id : string;
+
+  @Input()
   public title : string;
 
   @Input()
