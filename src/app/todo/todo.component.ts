@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { faTrashAlt } from '@fortawesome/free-solid-svg-icons';
 import { faEdit } from '@fortawesome/free-solid-svg-icons';
 import { faCalendarCheck } from '@fortawesome/free-solid-svg-icons';
@@ -13,6 +13,20 @@ export class TodoComponent implements OnInit {
   faCalendarCheck = faCalendarCheck
   faTrashAlt = faTrashAlt
   faEdit = faEdit
+
+  @Input()
+  public title : string;
+
+  @Input()
+  public description : string
+
+  @Input()
+  public progress : number
+
+  @Input()
+  public deadline : string
+
+
 
   constructor(private modalService: NgbModal) { }
 
