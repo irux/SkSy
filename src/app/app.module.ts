@@ -18,6 +18,7 @@ import { HomeComponent } from './home/home.component';
 import { TodoComponent } from './todo/todo.component';
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { ImprintComponent } from './imprint/imprint.component';
 
 @NgModule({
   declarations: [
@@ -25,6 +26,7 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
     HeaderComponent,
     HomeComponent,
     TodoComponent,
+    ImprintComponent,
   ],
   imports: [
     BrowserModule,
