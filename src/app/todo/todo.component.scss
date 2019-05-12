@@ -10,6 +10,15 @@
 
 ngb-progressbar {
     margin-top: 5rem;
+    background-color: black !important;
+    
+  }
+
+ #progress-bar  .progress .progress-bar{
+      background-color: black !important;
+  }
+  .bg-info{ 
+   background-color: black !important;
   }
 
  #btn-create:hover{
@@ -100,10 +109,8 @@ hr {
     display:inline; 
 }
 
-/*Progress Bar*/
-.progress-bar{
-    background:black;
-}
+
+
 
 /*Calender Custom CSS*/
 .gj-picker-md [role=header] {

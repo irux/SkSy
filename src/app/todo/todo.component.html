@@ -13,9 +13,10 @@
   <fa-icon [icon]="faCalendarCheck"></fa-icon>
    <p class="date">{{deadline}}</p>
 </div>
-     <div class="progresss">
-      <p><ngb-progressbar [showValue]="true" type="info" [value]="progress"></ngb-progressbar></p>
-      </div>
+  <!--Progress-->
+      
+      <ngb-progressbar id="progress-bar" [showValue]="true"  [value]="progress"></ngb-progressbar>
+     
     </div>
   </div>
   </div>
