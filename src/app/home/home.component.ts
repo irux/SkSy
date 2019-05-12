@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import {NgbModal, ModalDismissReasons} from '@ng-bootstrap/ng-bootstrap';
+import {NgbModal, ModalDismissReasons, NgbDate} from '@ng-bootstrap/ng-bootstrap';
 import {TodoService} from '../services/todo-services/todo.service';
 import {Todo} from '../types/Todo';
+import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-home',
@@ -12,6 +13,8 @@ export class HomeComponent implements OnInit {
   closeResult: string;
 
   public date;
+
+  public listTodos = [];
 
   public newTodo : Todo = new Todo()
 
@@ -39,6 +42,8 @@ export class HomeComponent implements OnInit {
 
 
   public async createTodo(todo){
+    if(this.newTodo.title == '' || this.newTodo.deadline == '' || this.newTodo.description == '')
+      return;
     console.log("Here is the todo : ")
     console.log(todo)
     console.log("Creating todo...")
@@ -47,10 +52,20 @@ export class HomeComponent implements OnInit {
     console.log("Todo Created")
     this.newTodo = new Todo()
     this.modalService.dismissAll()
+    await this.requestAllTodos();
   }
 
+  public changeDateInPicker(dateObject){
+    this.newTodo.deadline = `${dateObject.day}/${dateObject.month}/${dateObject.year}`
+  }
 
-  ngOnInit() {
+  private async requestAllTodos(){
+    let todosObserver = await this.todoService.getAllTodos()
+    let subs : Subscription = todosObserver.subscribe((listTodosServer) => this.listTodos = listTodosServer)
+  }
+
+  async ngOnInit() {
+    await this.requestAllTodos()
   }
 
 }
