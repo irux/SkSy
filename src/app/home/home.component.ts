@@ -58,6 +58,7 @@ export class HomeComponent implements OnInit {
   public changeDateInPicker(dateObject){
     this.newTodo.deadline = `${dateObject.day}/${dateObject.month}/${dateObject.year}`
   }
+  
 
   private async requestAllTodos(){
     let todosObserver = await this.todoService.getAllTodos()

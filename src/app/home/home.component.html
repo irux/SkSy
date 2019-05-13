@@ -29,7 +29,9 @@
         </div>
         <div class="form-group">
           <label for="recipient-name" class="col-form-label">Deadline:</label>
-          <ngb-datepicker  (select)="changeDateInPicker($event)" #d name="date"></ngb-datepicker>
+          <!--<ngb-datepicker (click)="d.toggle()" (select)="changeDateInPicker($event)" #d name="date" class="form-control"></ngb-datepicker > -->
+         <input type="date"  (select)="changeDateInPicker($event)" #d name="date" class="form-control"/>
+        
         </div>
       </form>
     </div>
