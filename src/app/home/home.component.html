@@ -1,6 +1,7 @@
 <nav class="navbar navbar-expand-lg navbar-light">
   <div class="nav-body">
-    <a class="navbar-brand" href="#"><b><i>My ToDos</i></b></a>
+    
+    <a class="navbar-brand" href="#" style="font-size: 34px"><b><i>My ToDos</i></b></a>
     <button class="btn btn-outline-primary mb-2 mr-2" id="btn-create" (click)="openWindowCustomClass(content)">Create</button>
   </div>
 </nav>
@@ -8,7 +9,7 @@
 
 <div class="container" id="container0">
   <div class="row" id="list_of_todos"> 
-    <app-todo *ngFor="let todo of listTodos" id="todo._id" title="{{todo.title}}" description="{{todo.description}}" deadline="{{todo.deadline}}" progress="{{todo.progress}}" class="col-lg-4 col-md-6"></app-todo>
+      <app-todo *ngFor="let todo of listTodos" id="todo._id" title="{{todo.title}}" description="{{todo.description}}" deadline="{{todo.deadline}}" progress="{{todo.progress}}" class="col-lg-4 col-md-6"></app-todo>
   </div>
   <ng-template #content let-modal>
     <div class="modal-header">
@@ -29,7 +30,9 @@
         </div>
         <div class="form-group">
           <label for="recipient-name" class="col-form-label">Deadline:</label>
-          <ngb-datepicker  (select)="changeDateInPicker($event)" #d name="date"></ngb-datepicker>
+         <!-- <ngb-datepicker (select)="changeDateInPicker($event)" #d name="date" ></ngb-datepicker >-->
+         <input type="date" [(ngModel)]="newTodo.deadline" #d name="date" class="form-control"/>
+        
         </div>
       </form>
     </div>

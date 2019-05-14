@@ -66,6 +66,12 @@ hr {
 #btn-edit{
     float:left;
 }
+.btn-outline-primary:hover{
+ color:white !important;
+}
+.btn-primary:hover{
+    color:white;
+}
 #btn-edit:active{
     border:solid 1px black !important;
     background: #f7e08e;

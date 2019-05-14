@@ -17,7 +17,7 @@ body{
 }
 .navbar-light .navbar-brand{
     color:white;
-    font-size:28px;
+    font-size:40px;
 }
 .navbar-light .navbar-brand:hover{
     color:#F4D35E;
@@ -25,11 +25,19 @@ body{
 .nav-body{
     width:100%;
 }
+img{
+    width:60px;
+
+}
+.brand_img{
+    padding:5px;
+}
 
 /**TopBar Create Button*/
 #btn-create{
     color:white;
-   display: inherit;
+    font-size:28px;
+    display: inherit;
     border: solid 1px white !important;
     float:right;
     margin-top:10px;

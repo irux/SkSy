@@ -42,6 +42,7 @@ export class HomeComponent implements OnInit {
 
 
   public async createTodo(todo){
+    
     if(this.newTodo.title == '' || this.newTodo.deadline == '' || this.newTodo.description == '')
       return;
     console.log("Here is the todo : ")
@@ -57,7 +58,9 @@ export class HomeComponent implements OnInit {
 
   public changeDateInPicker(dateObject){
     this.newTodo.deadline = `${dateObject.day}/${dateObject.month}/${dateObject.year}`
+    console.log(dateObject)
   }
+  
 
   private async requestAllTodos(){
     let todosObserver = await this.todoService.getAllTodos()
