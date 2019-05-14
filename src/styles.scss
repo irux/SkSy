@@ -12,9 +12,15 @@ $custom-typography: mat-typography-config(
 
 @include mat-core($custom-typography);
 
+@font-face{
+  font-family:'Indie Flower', cursive;
+  @import url('https://fonts.googleapis.com/css?family=Indie+Flower');
+
+}
 body {
     margin:0;
     font-family: 'Indie Flower', cursive;
+    font-size: 30px;
     background: #faedbe;
   app-root * {
     font-family: 'Indie Flower';
