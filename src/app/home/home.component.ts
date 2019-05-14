@@ -67,6 +67,19 @@ export class HomeComponent implements OnInit {
     let subs : Subscription = todosObserver.subscribe((listTodosServer) => this.listTodos = listTodosServer)
   }
 
+
+  private async manageDelete(event){
+      console.log("Me llamo el delete");
+      console.log(event);
+      await this.requestAllTodos()
+  }
+
+  private async manageEdit(event){
+    console.log("Me llamo el edit");
+    console.log(event);
+    await this.requestAllTodos()
+}
+
   async ngOnInit() {
     await this.requestAllTodos()
   }

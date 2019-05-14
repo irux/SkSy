@@ -9,7 +9,7 @@
 
 <div class="container" id="container0">
   <div class="row" id="list_of_todos"> 
-      <app-todo *ngFor="let todo of listTodos" id="todo._id" title="{{todo.title}}" description="{{todo.description}}" deadline="{{todo.deadline}}" progress="{{todo.progress}}" class="col-lg-4 col-md-6"></app-todo>
+      <app-todo *ngFor="let todo of listTodos" (edit)="manageEdit($event)" (delete)="manageDelete($event)"  id="{{todo._id}}" title="{{todo.title}}" description="{{todo.description}}" deadline="{{todo.deadline}}" progress="{{todo.progress}}" class="col-lg-4 col-md-6"></app-todo>
   </div>
   <ng-template #content let-modal>
     <div class="modal-header">

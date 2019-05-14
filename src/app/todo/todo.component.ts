@@ -3,6 +3,9 @@ import { faTrashAlt } from '@fortawesome/free-solid-svg-icons';
 import { faEdit } from '@fortawesome/free-solid-svg-icons';
 import { faCalendarCheck } from '@fortawesome/free-solid-svg-icons';
 import {NgbModal, ModalDismissReasons} from '@ng-bootstrap/ng-bootstrap';
+import { TodoService } from '../services/todo-services/todo.service';
+import { Subscriber, Subscription } from 'rxjs';
+import { Todo } from '../types/Todo';
 @Component({
   selector: 'app-todo',
   templateUrl: './todo.component.html',
@@ -35,7 +38,7 @@ export class TodoComponent implements OnInit {
 
 
 
-  constructor(private modalService: NgbModal) { }
+  constructor(private modalService: NgbModal,public todoService : TodoService) { }
 
   openEditWindowSm(editContent) {
     this.modalService.open(editContent, { size: 'sm' });
@@ -50,6 +53,27 @@ export class TodoComponent implements OnInit {
     this.modalService.open(editContent, { centered: true });
   }
   ngOnInit() {
+  }
+
+  public  async deleteMe(){
+
+    let deleteEmpty = await this.todoService.deleteTodo(this.id)
+    let sub : Subscription = deleteEmpty.subscribe(() => this.delete.emit(null),(error) => this.delete.emit(null))
+    
+  }
+
+  public async editMe(){
+
+    let  newTodo : Todo = new Todo()
+
+    newTodo.deadline = this.deadline
+    newTodo.description = this.description
+    newTodo.title = this.title
+    newTodo.progress = this.progress
+
+    let editMe = await this.todoService.editTodo(this.id,newTodo)
+    let sub : Subscription = editMe.subscribe(() => this.delete.emit(null),(error) => this.delete.emit(null))
+    this.modalService.dismissAll()
   }
 
 }

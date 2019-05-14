@@ -22,7 +22,7 @@ export class TodoService {
   }
 
   public async deleteTodo(id) : Promise<Observable<any>>{
-    
+    console.log(id);
     return this.http.delete<Todo[]>("http://127.0.0.1:4040/api/todo/" + id)
   }
 
