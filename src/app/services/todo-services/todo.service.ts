@@ -21,5 +21,15 @@ export class TodoService {
     return this.http.get<Todo[]>("http://127.0.0.1:4040/api/todo")
   }
 
+  public async deleteTodo(id) : Promise<Observable<any>>{
+    
+    return this.http.delete<Todo[]>("http://127.0.0.1:4040/api/todo/" + id)
+  }
+
+  public async editTodo(id,newTodo) : Promise<Observable<any>>{
+    
+    return this.http.put<Todo[]>("http://127.0.0.1:4040/api/todo/" + id,newTodo)
+  }
+
 
 }

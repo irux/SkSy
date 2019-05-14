@@ -2,6 +2,8 @@
 const Joi = require('joi');
 const Todo = require('../models/todo.model')
 
+const mongoose = require('mongoose');
+
 const todoSchema = Joi.object({
     title: Joi.string().required(),
     description: Joi.string().required(),
@@ -12,7 +14,9 @@ const todoSchema = Joi.object({
 
 module.exports = {
     create,
-    getAllTodos
+    getAllTodos,
+    deleteById,
+    updateById
   }
 
 async function create(todo) {
@@ -29,3 +33,35 @@ async function getAllTodos(){
     return info;
 }
   
+
+async function deleteById(id){
+  let todoById = Todo.deleteOne({_id : mongoose.Types.ObjectId(id)})
+  return todoById;
+}
+
+async function updateById(id,body){
+
+  let updateObject = {}
+
+  if ("title" in body && body["title"] != null){
+    updateObject["title"] = body.title
+  }
+
+  if ("title" in body && body["description"] != null){
+    updateObject["description"] = body.description
+  }
+
+  if ("title" in body && body["progress"] != null){
+    updateObject["progress"] = body.progress
+  }
+
+  if ("title" in body && body["deadline"] != null){
+    updateObject["deadline"] = body.deadline
+  }
+  
+
+
+  let todoById = Todo.findOneAndUpdate({_id :mongoose.Types.ObjectId(id)},{ $set: updateObject })
+  let info = todoById.exec()
+  return info;
+}

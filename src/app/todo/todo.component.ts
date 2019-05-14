@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { faTrashAlt } from '@fortawesome/free-solid-svg-icons';
 import { faEdit } from '@fortawesome/free-solid-svg-icons';
 import { faCalendarCheck } from '@fortawesome/free-solid-svg-icons';
@@ -13,6 +13,10 @@ export class TodoComponent implements OnInit {
   faCalendarCheck = faCalendarCheck
   faTrashAlt = faTrashAlt
   faEdit = faEdit
+
+
+  @Output() delete: EventEmitter<any> = new EventEmitter();
+  @Output() edit: EventEmitter<any> = new EventEmitter();
 
   @Input()
   public id : string;
